@@ -4,16 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vue3 Basic</title>
+    <style>
+      .box {
+        background-color: aqua;
+        height: 100px;
+        width: 100px;
+      }
+      .box2 {
+        background-color: red;
+        height: 100px;
+        width: 100px;
+      }
+      .box3 {
+        background-color: gold;
+        height: 100px;
+        width: 100px;
+      }
+      [v-cloak] {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <div id="app">{{ graphic}}
-        <input v-model="graphic"/></div>
+    <div id="app" v-cloak>
+      {{ graphic}}
+      <input v-model="graphic" />
+      <hr />
+      <div v-if="isVisible" class="box"></div>
+      <div v-else-if="isVisible2" class="box2"></div>
+      <div v-else class="box3"></div>
+      <br />
+      <div v-show="isVisible" class="box"></div>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
       let app = Vue.createApp({
         data: function () {
           return {
             graphic: "Hello world !",
+            isVisible: false,
+            isVisible2: true,
           };
         },
       });
