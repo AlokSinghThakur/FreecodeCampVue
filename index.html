@@ -6,7 +6,8 @@
     <title>vue3 Basic</title>
   </head>
   <body>
-    <div id="app">{{ graphic}}</div>
+    <div id="app">{{ graphic}}
+        <input v-model="graphic"/></div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
       let app = Vue.createApp({
